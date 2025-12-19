@@ -1,4 +1,4 @@
-## RobomatN
+## Robomatn
 
 RobomatN is a simple personal mashup of Roboto + Vazirmatn made so Persian/Arabic and Latin text look perfect together on my Android without any tofu.
 
