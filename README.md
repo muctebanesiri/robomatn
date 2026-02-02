@@ -1,5 +1,3 @@
->[!example] This is the README of the [GitHub repository](https://github.com/muctebanesiri/robomatn).
-
 **Robomatn** is a simple personal mashup of **Roboto** and **Vazirmatn**, combined to make Persian, Arabic, and Latin text look aesthetically pleasing together on my Android, avoiding any "tofu" display issues.
 
 ### What’s here
