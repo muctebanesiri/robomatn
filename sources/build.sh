@@ -3,7 +3,7 @@ set -e
 mkdir -p fonts
 
 
-#Make unhinted
+# Make unhinted
 mkdir -p fonts/unhinted
 UNHINTED_VF_PATH=fonts/unhinted/roboto[ital,wdth,wght].ttf
 fontmake -m sources/roboto.designspace -o variable --output-path $UNHINTED_VF_PATH
@@ -11,6 +11,11 @@ python scripts/drop_mvar.py $UNHINTED_VF_PATH
 python scripts/gen_stat.py $UNHINTED_VF_PATH
 python scripts/instantiate_statics.py $UNHINTED_VF_PATH fonts/unhinted/static
 
+# ---- ADD THIS SECTION ----
+# Create the directory and copy the variable font to the location expected
+# by instantiate_condensed.py (which runs later)
+mkdir -p fonts/web/split
+cp $UNHINTED_VF_PATH fonts/web/split/roboto[wdth,wght].ttf
 
 # Make Android
 mkdir -p fonts/android
