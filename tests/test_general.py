@@ -48,28 +48,28 @@ GOOGLEFONTS_PROFILE_CHECKS = [
     'com.google.fonts/check/name/familyname',
 ]
 
-robomatn_GENERAL_CHECKS = [c for c in UNIVERSAL_PROFILE_CHECKS + GOOGLEFONTS_PROFILE_CHECKS
+roboto_GENERAL_CHECKS = [c for c in UNIVERSAL_PROFILE_CHECKS + GOOGLEFONTS_PROFILE_CHECKS
                          if c not in REMOVE_CHECKS]
 
-robomatn_GENERAL_CHECKS += [
-    "com.robomatn.fonts/check/italic_angle",
-    "com.robomatn.fonts/check/fs_type",
-    "com.robomatn.fonts/check/vendorid",
-    "com.robomatn.fonts/check/charset_coverage",
-    "com.robomatn.fonts/check/digit_widths",
-    "com.robomatn.fonts/check/numr_mapped_to_supr",
-    "com.robomatn.fonts/check/name_copyright",
-    "com.robomatn.fonts/check/name_unique_id",
-    "com.robomatn.fonts/check/vertical_metrics",
-    "com.robomatn.fonts/check/cmap4",
-    "com.robomatn.fonts/check/features",
+roboto_GENERAL_CHECKS += [
+    "com.roboto.fonts/check/italic_angle",
+    "com.roboto.fonts/check/fs_type",
+    "com.roboto.fonts/check/vendorid",
+    "com.roboto.fonts/check/charset_coverage",
+    "com.roboto.fonts/check/digit_widths",
+    "com.roboto.fonts/check/numr_mapped_to_supr",
+    "com.roboto.fonts/check/name_copyright",
+    "com.roboto.fonts/check/name_unique_id",
+    "com.roboto.fonts/check/vertical_metrics",
+    "com.roboto.fonts/check/cmap4",
+    "com.roboto.fonts/check/features",
 ]
 
 profile_imports = ('fontbakery.profiles.universal',)
-profile = profile_factory(default_section=Section("robomatn v3 general"))
+profile = profile_factory(default_section=Section("roboto v3 general"))
 
 
-# Checks ported from https://github.com/googlefonts/robomatn/blob/master/scripts/run_general_tests.py
+# Checks ported from https://github.com/googlefonts/roboto/blob/master/scripts/run_general_tests.py
 
 
 @condition
@@ -137,10 +137,10 @@ def font_family(ttFont):
 
 
 @check(
-    id="com.robomatn.fonts/check/italic_angle",
+    id="com.roboto.fonts/check/italic_angle",
     conditions = ["is_italic"]
 )
-def com_robomatn_fonts_check_italic_angle(ttFont):
+def com_roboto_fonts_check_italic_angle(ttFont):
     """Check italic fonts have correct italic angle"""
     failed = False
     if ttFont['post'].italicAngle != -12:
@@ -150,9 +150,9 @@ def com_robomatn_fonts_check_italic_angle(ttFont):
 
 
 @check(
-    id="com.robomatn.fonts/check/fs_type",
+    id="com.roboto.fonts/check/fs_type",
 )
-def com_robomatn_fonts_check_fs_type(ttFont):
+def com_roboto_fonts_check_fs_type(ttFont):
     """Check metadata is correct"""
     failed = False
     if ttFont['OS/2'].fsType != 0:
@@ -162,9 +162,9 @@ def com_robomatn_fonts_check_fs_type(ttFont):
 
 
 @check(
-    id="com.robomatn.fonts/check/vendorid",
+    id="com.roboto.fonts/check/vendorid",
 )
-def com_robomatn_fonts_check_vendorid(ttFont):
+def com_roboto_fonts_check_vendorid(ttFont):
     """Check vendorID is correct"""
     if ttFont["OS/2"].achVendID != "GOOG":
         yield FAIL, "OS/2.achVendID must be set to 'GOOG'"
@@ -173,11 +173,11 @@ def com_robomatn_fonts_check_vendorid(ttFont):
 
 
 @check(
-    id="com.robomatn.fonts/check/name_copyright",
+    id="com.roboto.fonts/check/name_copyright",
 )
-def com_robomatn_fonts_check_copyright(ttFont):
+def com_roboto_fonts_check_copyright(ttFont):
     """Check font copyright is correct"""
-    expected_copyright = "Copyright 2011 The robomatn Project Authors (https://github.com/googlefonts/robomatn-classic)"
+    expected_copyright = "Copyright 2011 The roboto Project Authors (https://github.com/googlefonts/roboto-classic)"
     copyright_record = ttFont['name'].getName(0, 3, 1, 1033).toUnicode()
     if copyright_record == expected_copyright:
         yield PASS, "Copyright is correct"
@@ -186,9 +186,9 @@ def com_robomatn_fonts_check_copyright(ttFont):
 
 
 @check(
-    id="com.robomatn.fonts/check/name_unique_id",
+    id="com.roboto.fonts/check/name_unique_id",
 )
-def com_robomatn_fonts_check_name_unique_id(ttFont):
+def com_roboto_fonts_check_name_unique_id(ttFont):
     """Check font unique id is correct"""
     family_name = font_family(ttFont)
     style = font_style(ttFont)
@@ -202,9 +202,9 @@ def com_robomatn_fonts_check_name_unique_id(ttFont):
 
 
 @check(
-    id="com.robomatn.fonts/check/digit_widths",
+    id="com.roboto.fonts/check/digit_widths",
 )
-def com_robomatn_fonts_check_digit_widths(ttFont):
+def com_roboto_fonts_check_digit_widths(ttFont):
     """Check that all digits have the same width"""
     widths = set()
     for glyph_name in ["zero", "one", "two", "three","four", "five", "six", "seven", "eight", "nine"]:
@@ -216,9 +216,9 @@ def com_robomatn_fonts_check_digit_widths(ttFont):
 
 
 @check(
-    id="com.robomatn.fonts/check/numr_mapped_to_supr",
+    id="com.roboto.fonts/check/numr_mapped_to_supr",
 )
-def com_robomatn_fonts_check_numr_mapped_to_supr(ttFont):
+def com_roboto_fonts_check_numr_mapped_to_supr(ttFont):
     """Check that 'numr' features maps digits to Unicode superscripts."""
     ascii_digits = '0123456789'
     superscript_digits = u'⁰¹²³⁴⁵⁶⁷⁸⁹'
@@ -268,10 +268,10 @@ def exclude_glyphs():
 
 
 @check(
-    id="com.robomatn.fonts/check/charset_coverage",
+    id="com.roboto.fonts/check/charset_coverage",
     conditions = ["include_glyphs", "exclude_glyphs"]
 )
-def com_robomatn_fonts_check_charset_coverage(ttFont, include_glyphs, exclude_glyphs):
+def com_roboto_fonts_check_charset_coverage(ttFont, include_glyphs, exclude_glyphs):
     """Check to make sure certain unicode encoded glyphs are included and excluded"""
     font_unicodes = set(ttFont.getBestCmap().keys())
 
@@ -292,16 +292,16 @@ def com_robomatn_fonts_check_charset_coverage(ttFont, include_glyphs, exclude_gl
 # TODO TestFeatures
 
 @check(
-    id="com.robomatn.fonts/check/vertical_metrics",
+    id="com.roboto.fonts/check/vertical_metrics",
 )
-def com_robomatn_fonts_check_vertical_metrics(ttFont):
+def com_roboto_fonts_check_vertical_metrics(ttFont):
     """Check vertical metrics are correct"""
     failed = []
     expected = {
         # android requires this, and web fonts expect this
         ("head", "yMin"): -555,
         ("head", "yMax"): 2163,
-        # test hhea ascent, descent, and lineGap to be equal to robomatn v1 values
+        # test hhea ascent, descent, and lineGap to be equal to roboto v1 values
         ("hhea", "descent"): -500,
         ("hhea", "ascent"): 1900,
         ("hhea", "lineGap"): 0,
@@ -330,9 +330,9 @@ def com_robomatn_fonts_check_vertical_metrics(ttFont):
 
 
 @check(
-    id="com.robomatn.fonts/check/cmap4",
+    id="com.roboto.fonts/check/cmap4",
 )
-def com_robomatn_fonts_check_cmap4(ttFont):
+def com_roboto_fonts_check_cmap4(ttFont):
     """Check fonts have cmap format 4"""
     cmap_table = ttFont['cmap'].getcmap(3, 1)
     if cmap_table and cmap_table.format == 4:
@@ -342,11 +342,11 @@ def com_robomatn_fonts_check_cmap4(ttFont):
 
 
 @check(
-    id="com.robomatn.fonts/check/features",
+    id="com.roboto.fonts/check/features",
 )
-def com_robomatn_fonts_check_features(font_features, include_features):
+def com_roboto_fonts_check_features(font_features, include_features):
     """Check font has correct features.
-    https://github.com/googlefonts/robomatn-classic/issues/97"""
+    https://github.com/googlefonts/roboto-classic/issues/97"""
     missing = include_features - font_features
     if missing:
         yield FAIL, f"Font is missing features {missing}"
@@ -355,5 +355,5 @@ def com_robomatn_fonts_check_features(font_features, include_features):
 
 
 profile.auto_register(globals(), filter_func=filter_checks)
-profile.test_expected_checks(robomatn_GENERAL_CHECKS, exclusive=False)
+profile.test_expected_checks(roboto_GENERAL_CHECKS, exclusive=False)
 

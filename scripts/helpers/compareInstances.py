@@ -5,11 +5,11 @@ import string
 
 charset = string.uppercase+string.lowercase
 
-label1 = "robomatn-Light"
+label1 = "roboto-Light"
 label2 = "VF Instance"
 
-fontpath1 = "master_ttf_interpolatable/robomatn-Bold.ttf"
-fontpath2 = "instances/robomatnB-VF-instanceBold.ttf"
+fontpath1 = "master_ttf_interpolatable/roboto-Bold.ttf"
+fontpath2 = "instances/robotoB-VF-instanceBold.ttf"
 
 ttfont1 = TTFont(fontpath1)
 ttfont2 = TTFont(fontpath2)

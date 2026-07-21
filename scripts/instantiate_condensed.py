@@ -13,28 +13,28 @@ from scripts import (
 roman_instance = {
     "attribs": {"usWidthClass": 3},
     "axes": {"wdth": 75},
-    "filename": "robomatnCondensed[wght].ttf",
+    "filename": "robotoCondensed[wght].ttf",
     "names": {
-        "1,3,1,1033": "robomatn Condensed",
+        "1,3,1,1033": "roboto Condensed",
         "2,3,1,1033": "Regular",
-        "3,3,1,1033": "Google:robomatn Condensed Regular:2016",
-        "4,3,1,1033": "robomatn Condensed Regular",
-        "6,3,1,1033": "robomatnCondensed-Regular",
-        "25,3,1,1033": "robomatnCondensed"
+        "3,3,1,1033": "Google:roboto Condensed Regular:2016",
+        "4,3,1,1033": "roboto Condensed Regular",
+        "6,3,1,1033": "robotoCondensed-Regular",
+        "25,3,1,1033": "robotoCondensed"
     },
 }
 
 italic_instance = {
     "attribs": {"usWidthClass": 3, "italicAngle": -12, "caretSlopeRise": 2048, "caretSlopeRun": 435},
     "axes": {"wdth": 75},
-    "filename": "robomatnCondensed-Italic[wght].ttf",
+    "filename": "robotoCondensed-Italic[wght].ttf",
     "names": {
-        "1,3,1,1033": "robomatn Condensed",
+        "1,3,1,1033": "roboto Condensed",
         "2,3,1,1033": "Italic",
-        "3,3,1,1033": "Google:robomatn Condensed Italic:2016",
-        "4,3,1,1033": "robomatn Condensed Italic",
-        "6,3,1,1033": "robomatnCondensed-Italic",
-        "25,3,1,1033": "robomatnCondensed"
+        "3,3,1,1033": "Google:roboto Condensed Italic:2016",
+        "4,3,1,1033": "roboto Condensed Italic",
+        "6,3,1,1033": "robotoCondensed-Italic",
+        "25,3,1,1033": "robotoCondensed"
     },
 }
 
@@ -55,7 +55,7 @@ def update_fvar_instances(ttfont):
                 name.setName(new_name, record.nameID, record.platformID, record.platEncID, record.langID)
 
             string = record.toUnicode()
-            name.setName(string.replace("robomatn-Condensed", "robomatnCondensed-"), record.nameID, record.platformID, record.platEncID, record.langID)
+            name.setName(string.replace("roboto-Condensed", "robotoCondensed-"), record.nameID, record.platformID, record.platEncID, record.langID)
 
 
 def update_stat(ttfont):

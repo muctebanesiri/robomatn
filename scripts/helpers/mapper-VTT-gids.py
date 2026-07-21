@@ -9,11 +9,11 @@ targetGlyphOrder =   [['0', '.notdef', 'None'], ['1', '.null', '0'], ['2', 'uni0
 
 
 # Source xml with original GIDOrder
-fullTree = ET.parse('../HintingSource/robomatn.xml')
+fullTree = ET.parse('../HintingSource/roboto.xml')
 # Source xml with smaller GIDOrder
-smallTree = ET.parse('../HintingSource/robomatnNewGIDOrder.xml')
+smallTree = ET.parse('../HintingSource/robotoNewGIDOrder.xml')
 # Source Target
-newTree = ET.parse('../HintingSource/robomatnNEW.xml')
+newTree = ET.parse('../HintingSource/robotoNEW.xml')
 
 root = fullTree.getroot()
 rootSmall = smallTree.getroot()
@@ -42,7 +42,7 @@ def removeGlyf():
     element = newRoot.makeelement('glyf', attrib)
     newRoot.append(element)
     
-    newTree.write('../HintingSource/robomatnNEW.xml')
+    newTree.write('../HintingSource/robotoNEW.xml')
 
 
 #Loop to store all GlyphIDs and hint instructions of the full Hinting source XML
@@ -91,7 +91,7 @@ def writeNewTTGlyph(NewTTGlyph):
     # adding an element to the root node
     newRoot[3].append(NewTTGlyph)
     print(newRoot[3])
-    newTree.write('../HintingSource/robomatnNEW.xml')
+    newTree.write('../HintingSource/robotoNEW.xml')
     
 
 # Build new TTGlyph

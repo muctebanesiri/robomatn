@@ -1,7 +1,7 @@
 # Export vtt hinting from VTT source font and save as sources/vtt-hinting.ttx
 set -e
 
-SRC_TTF=sources/robomatn[ital,wdth,wght]_VTT.ttf
+SRC_TTF=sources/roboto[ital,wdth,wght]_VTT.ttf
 DST_TTX=sources/vtt-hinting.ttx
 
 if [ -f "$SRC_TTF" ]; then

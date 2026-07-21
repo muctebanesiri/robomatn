@@ -5,30 +5,30 @@ from fontbakery.fonts_profile import profile_factory
 from tests.test_general import (
     include_features,
     font_features,
-    com_robomatn_fonts_check_italic_angle,
-    com_robomatn_fonts_check_fs_type,
-    com_robomatn_fonts_check_vendorid,
-    com_robomatn_fonts_check_digit_widths,
-    com_robomatn_fonts_check_charset_coverage,
-    com_robomatn_fonts_check_features,
+    com_roboto_fonts_check_italic_angle,
+    com_roboto_fonts_check_fs_type,
+    com_roboto_fonts_check_vendorid,
+    com_roboto_fonts_check_digit_widths,
+    com_roboto_fonts_check_charset_coverage,
+    com_roboto_fonts_check_features,
 )
 from fontbakery.profiles.shared_conditions import is_italic
 
 
-profile = profile_factory(default_section=Section("robomatn android v3"))
+profile = profile_factory(default_section=Section("roboto android v3"))
 
 exclude_glyphs = frozenset([0x00A0])
 
 
-robomatn_PROFILE_CHECKS = [
-    "com.robomatn.fonts/check/vertical_metrics",
-    "com.robomatn.fonts/check/italic_angle",
-    "com.robomatn.fonts/check/fs_type",
-    "com.robomatn.fonts/check/vendorid",
-    "com.robomatn.fonts/check/digit_widths",
-    "com.robomatn.fonts/check/glyph_dont_round_to_grid",
-    "com.robomatn.fonts/check/charset_coverage",
-    "com.robomatn.fonts/check/features",
+roboto_PROFILE_CHECKS = [
+    "com.roboto.fonts/check/vertical_metrics",
+    "com.roboto.fonts/check/italic_angle",
+    "com.roboto.fonts/check/fs_type",
+    "com.roboto.fonts/check/vendorid",
+    "com.roboto.fonts/check/digit_widths",
+    "com.roboto.fonts/check/glyph_dont_round_to_grid",
+    "com.roboto.fonts/check/charset_coverage",
+    "com.roboto.fonts/check/features",
 ]
 
 
@@ -53,9 +53,9 @@ def exclude_glyphs():
 
 
 @check(
-    id="com.robomatn.fonts/check/glyph_dont_round_to_grid",
+    id="com.roboto.fonts/check/glyph_dont_round_to_grid",
 )
-def com_robomatn_fonts_check_glyph_dont_round_to_grid(ttFont):
+def com_roboto_fonts_check_glyph_dont_round_to_grid(ttFont):
     """Test certain glyphs don't round to grid"""
     failed = False
     for name in ["ellipsis"]:
@@ -72,14 +72,14 @@ def com_robomatn_fonts_check_glyph_dont_round_to_grid(ttFont):
 
 
 @check(
-    id="com.robomatn.fonts/check/vertical_metrics",
+    id="com.roboto.fonts/check/vertical_metrics",
 )
-def com_robomatn_fonts_check_vertical_metrics(ttFont):
+def com_roboto_fonts_check_vertical_metrics(ttFont):
     """Check vertical metrics are correct"""
     failed = []
     expected = {
         # Android values come from v2.136 android fonts
-        # https://github.com/googlefonts/robomatn/releases/tag/v2.136
+        # https://github.com/googlefonts/roboto/releases/tag/v2.136
         ("head", "yMin"): -555,
         ("head", "yMax"): 2163,
         ("hhea", "descent"): -500,
@@ -110,4 +110,4 @@ def com_robomatn_fonts_check_vertical_metrics(ttFont):
 # ligatures
 
 profile.auto_register(globals())
-profile.test_expected_checks(robomatn_PROFILE_CHECKS, exclusive=True)
+profile.test_expected_checks(roboto_PROFILE_CHECKS, exclusive=True)

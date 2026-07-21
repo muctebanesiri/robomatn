@@ -3,25 +3,25 @@ import os
 
 ###
 
-designSpacePath = "robomatn-min.designspace"
-familyName = "robomatn"
+designSpacePath = "roboto-min.designspace"
+familyName = "roboto"
 
 sources = [
-    dict(path="master_ufo/robomatn-Thin.ufo", name="robomatn-Thin.ufo", location=dict(weight=-1, width=100, slant=0), styleName="Thin", familyName=familyName, copyInfo=False),
-    dict(path="master_ufo/robomatn-Regular.ufo", name="robomatn-Regular.ufo", location=dict(weight=-0.1, width=100, slant=0), styleName="Regular", familyName=familyName, copyInfo=True),
-    dict(path="master_ufo/robomatn-Black.ufo", name="robomatn-Black.ufo", location=dict(weight=1.125, width=100, slant=0), styleName="Black", familyName=familyName, copyInfo=False),
+    dict(path="master_ufo/roboto-Thin.ufo", name="roboto-Thin.ufo", location=dict(weight=-1, width=100, slant=0), styleName="Thin", familyName=familyName, copyInfo=False),
+    dict(path="master_ufo/roboto-Regular.ufo", name="roboto-Regular.ufo", location=dict(weight=-0.1, width=100, slant=0), styleName="Regular", familyName=familyName, copyInfo=True),
+    dict(path="master_ufo/roboto-Black.ufo", name="roboto-Black.ufo", location=dict(weight=1.125, width=100, slant=0), styleName="Black", familyName=familyName, copyInfo=False),
     
-    dict(path="master_ufo/robomatn-ThinItalic.ufo", name="robomatn-ThinItalic.ufo", location=dict(weight=-1, width=100, slant=-12), styleName="Thin Italic", familyName=familyName, copyInfo=False),
-    dict(path="master_ufo/robomatn-Italic.ufo", name="robomatn-Italic.ufo", location=dict(weight=-0.1, width=100, slant=-12), styleName="Italic", familyName=familyName, copyInfo=False),
-    dict(path="master_ufo/robomatn-BlackItalic.ufo", name="robomatn-BlackItalic.ufo", location=dict(weight=1.125, width=100, slant=-12), styleName="Black Italic", familyName=familyName, copyInfo=False),
+    dict(path="master_ufo/roboto-ThinItalic.ufo", name="roboto-ThinItalic.ufo", location=dict(weight=-1, width=100, slant=-12), styleName="Thin Italic", familyName=familyName, copyInfo=False),
+    dict(path="master_ufo/roboto-Italic.ufo", name="roboto-Italic.ufo", location=dict(weight=-0.1, width=100, slant=-12), styleName="Italic", familyName=familyName, copyInfo=False),
+    dict(path="master_ufo/roboto-BlackItalic.ufo", name="roboto-BlackItalic.ufo", location=dict(weight=1.125, width=100, slant=-12), styleName="Black Italic", familyName=familyName, copyInfo=False),
 
-    dict(path="master_ufo/robomatnCondensed-Light.ufo", name="robomatnCondensed-Light.ufo", location=dict(weight=-0.55, width=75, slant=0), styleName="Condensed Light", familyName=familyName, copyInfo=False),
-    dict(path="master_ufo/robomatnCondensed-Regular.ufo", name="robomatnCondensed-Regular.ufo", location=dict(weight=-0.1, width=75, slant=0), styleName="Condensed Regular", familyName=familyName, copyInfo=False),
-    dict(path="master_ufo/robomatnCondensed-Bold.ufo", name="robomatnCondensed-Bold.ufo", location=dict(weight=0.75, width=75, slant=0), styleName="Condensed Bold", familyName=familyName, copyInfo=False),
+    dict(path="master_ufo/robotoCondensed-Light.ufo", name="robotoCondensed-Light.ufo", location=dict(weight=-0.55, width=75, slant=0), styleName="Condensed Light", familyName=familyName, copyInfo=False),
+    dict(path="master_ufo/robotoCondensed-Regular.ufo", name="robotoCondensed-Regular.ufo", location=dict(weight=-0.1, width=75, slant=0), styleName="Condensed Regular", familyName=familyName, copyInfo=False),
+    dict(path="master_ufo/robotoCondensed-Bold.ufo", name="robotoCondensed-Bold.ufo", location=dict(weight=0.75, width=75, slant=0), styleName="Condensed Bold", familyName=familyName, copyInfo=False),
 
-    dict(path="master_ufo/robomatnCondensed-LightItalic.ufo", name="robomatnCondensed-LightItalic.ufo", location=dict(weight=-0.55, width=75, slant=-12), styleName="Condensed Light Italic", familyName=familyName, copyInfo=False),
-    dict(path="master_ufo/robomatnCondensed-Italic.ufo", name="robomatnCondensed-Italic.ufo", location=dict(weight=-0.1, width=75, slant=-12), styleName="Condensed Italic", familyName=familyName, copyInfo=False),
-    dict(path="master_ufo/robomatnCondensed-BoldItalic.ufo", name="robomatnCondensed-BoldItalic.ufo", location=dict(weight=0.75, width=75, slant=-12), styleName="Condensed Bold Italic", familyName=familyName, copyInfo=False),
+    dict(path="master_ufo/robotoCondensed-LightItalic.ufo", name="robotoCondensed-LightItalic.ufo", location=dict(weight=-0.55, width=75, slant=-12), styleName="Condensed Light Italic", familyName=familyName, copyInfo=False),
+    dict(path="master_ufo/robotoCondensed-Italic.ufo", name="robotoCondensed-Italic.ufo", location=dict(weight=-0.1, width=75, slant=-12), styleName="Condensed Italic", familyName=familyName, copyInfo=False),
+    dict(path="master_ufo/robotoCondensed-BoldItalic.ufo", name="robotoCondensed-BoldItalic.ufo", location=dict(weight=0.75, width=75, slant=-12), styleName="Condensed Bold Italic", familyName=familyName, copyInfo=False),
 ]
 axes = [
     dict(minimum=250, maximum=900, default=400, name="weight", tag="wght", labelNames={"en": "Weight"}, map=[(250.0, -1.0), (300.0, -0.55), (400.0, -0.1), (500.0, 0.35), (700.0, 0.73), (900.0, 1.125)]),

@@ -6,12 +6,12 @@ from tests.test_general import (
     font_family,
     font_style,
     font_features,
-    com_robomatn_fonts_check_italic_angle,
-    com_robomatn_fonts_check_fs_type,
-    com_robomatn_fonts_check_vendorid,
-    com_robomatn_fonts_check_digit_widths,
-    com_robomatn_fonts_check_features,
-    com_robomatn_fonts_check_charset_coverage,
+    com_roboto_fonts_check_italic_angle,
+    com_roboto_fonts_check_fs_type,
+    com_roboto_fonts_check_vendorid,
+    com_roboto_fonts_check_digit_widths,
+    com_roboto_fonts_check_features,
+    com_roboto_fonts_check_charset_coverage,
     exclude_glyphs,
 )
 from fontbakery.profiles.shared_conditions import is_italic
@@ -20,7 +20,7 @@ from fontbakery.profiles.shared_conditions import is_italic
 @condition
 def include_glyphs():
     # Ensure superior and inferior figures are included
-    # https://github.com/googlefonts/robomatn-classic/issues/97
+    # https://github.com/googlefonts/roboto-classic/issues/97
     return frozenset([
         0x2070,
         0x2074,
@@ -48,33 +48,33 @@ def include_features():
         'locl', 'numr', 'onum', 'pnum', 'smcp', 'ss01', 'ss02', 'ss03', 'ss04',
         'ss05', 'ss06', 'ss07', 'tnum', 'sups', 'subs'])
 
-profile = profile_factory(default_section=Section("robomatn web v3"))
+profile = profile_factory(default_section=Section("roboto web v3"))
 
-robomatn_PROFILE_CHECKS = [
-    "com.robomatn.fonts/check/vertical_metrics",
-    "com.robomatn.fonts/check/oblique_bits_not_set",
-    "com.robomatn.fonts/check/unique_id",
-    "com.robomatn.fonts/check/hinting",
-    "com.robomatn.fonts/check/italic_angle",
-    "com.robomatn.fonts/check/fs_type",
-    "com.robomatn.fonts/check/vendorid",
-    "com.robomatn.fonts/check/digit_widths",
-    "com.robomatn.fonts/check/features",
-    "com.robomatn.fonts/check/charset_coverage",
+roboto_PROFILE_CHECKS = [
+    "com.roboto.fonts/check/vertical_metrics",
+    "com.roboto.fonts/check/oblique_bits_not_set",
+    "com.roboto.fonts/check/unique_id",
+    "com.roboto.fonts/check/hinting",
+    "com.roboto.fonts/check/italic_angle",
+    "com.roboto.fonts/check/fs_type",
+    "com.roboto.fonts/check/vendorid",
+    "com.roboto.fonts/check/digit_widths",
+    "com.roboto.fonts/check/features",
+    "com.roboto.fonts/check/charset_coverage",
 ]
 
 
 @check(
-    id="com.robomatn.fonts/check/vertical_metrics",
+    id="com.roboto.fonts/check/vertical_metrics",
 )
-def com_robomatn_fonts_check_vertical_metrics(ttFont):
+def com_roboto_fonts_check_vertical_metrics(ttFont):
     """Check vertical metrics are correct"""
     failed = []
     expected = {
         # android requires this, and web fonts expect this
         ("head", "yMin"): -555,
         ("head", "yMax"): 2163,
-        # test hhea ascent, descent, and lineGap to be equal to robomatn v1 values
+        # test hhea ascent, descent, and lineGap to be equal to roboto v1 values
         ("hhea", "descent"): -500,
         ("hhea", "ascent"): 1900,
         ("hhea", "lineGap"): 0,
@@ -103,9 +103,9 @@ def com_robomatn_fonts_check_vertical_metrics(ttFont):
 
 
 @check(
-    id="com.robomatn.fonts/check/oblique_bits_not_set",
+    id="com.roboto.fonts/check/oblique_bits_not_set",
 )
-def com_robomatn_fonts_check_oblique_bits_not_set(ttFont):
+def com_roboto_fonts_check_oblique_bits_not_set(ttFont):
     """Check oblique bits are not set in fonts"""
     if ttFont['OS/2'].fsSelection & (1 << 9) != 0:
         yield FAIL, "fsSelection bit 9 (Oblique) must not be enabled"
@@ -114,9 +114,9 @@ def com_robomatn_fonts_check_oblique_bits_not_set(ttFont):
 
 
 @check(
-    id="com.robomatn.fonts/check/unique_id",
+    id="com.roboto.fonts/check/unique_id",
 )
-def com_robomatn_fonts_check_unique_id(ttFont):
+def com_roboto_fonts_check_unique_id(ttFont):
     """Check font unique id is correct"""
     family_name = font_family(ttFont)
     style = font_style(ttFont)
@@ -133,13 +133,13 @@ def com_robomatn_fonts_check_unique_id(ttFont):
 
 
 @check(
-    id="com.robomatn.fonts/check/hinting",
+    id="com.roboto.fonts/check/hinting",
 )
-def com_robomatn_fonts_check_hinting(ttFont):
+def com_roboto_fonts_check_hinting(ttFont):
     """Check glyphs have hinting"""
     missing_hints = []
     # we can ignore these according to Mike D
-    # https://github.com/TypeNetwork/robomatn/issues/70#issuecomment-641221200
+    # https://github.com/TypeNetwork/roboto/issues/70#issuecomment-641221200
     ignore = ['.notdef', 'uni0488', 'uni0489', 'uniFFFC', 'uniFFFD']
     for glyph_name in ttFont.getGlyphOrder():
         glyph = ttFont['glyf'][glyph_name]
@@ -154,4 +154,4 @@ def com_robomatn_fonts_check_hinting(ttFont):
 
 
 profile.auto_register(globals())
-profile.test_expected_checks(robomatn_PROFILE_CHECKS, exclusive=True)
+profile.test_expected_checks(roboto_PROFILE_CHECKS, exclusive=True)

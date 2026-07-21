@@ -2,7 +2,7 @@ import defcon
 from glob import glob
 
 
-sources = glob('/Users/marcfoley/Type/upstream_families/robomatn/sources/*.ufo')
+sources = glob('/Users/marcfoley/Type/upstream_families/roboto/sources/*.ufo')
 
 for source in sources:
     font = defcon.Font(source)

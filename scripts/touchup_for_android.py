@@ -8,7 +8,7 @@ def main(font_path):
     font = TTFont(font_path, recalcBBoxes=False)
     glyf = font["glyf"]
     # turn off round-to-grid flags in certain problem components
-    # https://github.com/google/robomatn/issues/153
+    # https://github.com/google/roboto/issues/153
     ellipsis = glyf['ellipsis']
     for component in ellipsis.components:
         component.flags &= ~(1 << 2)

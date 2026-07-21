@@ -15,10 +15,10 @@ def update_psname_and_fullname(ttfont, include_year=False):
     style_name = ttfont['name'].getName(17, 3, 1, 1033) or \
                  ttfont['name'].getName(2, 3, 1, 1033)
     full_name = family_name.toUnicode() + " " + style_name.toUnicode()
-    if full_name == "robomatn Regular":
-        full_name = "robomatn"
-    if full_name == "robomatn Condensed Regular":
-        full_name = "robomatn Condensed"
+    if full_name == "roboto Regular":
+        full_name = "roboto"
+    if full_name == "roboto Condensed Regular":
+        full_name = "roboto Condensed"
     if include_year:
         year = date.today().year
         unique_id = f"Google:{full_name}:{year}"

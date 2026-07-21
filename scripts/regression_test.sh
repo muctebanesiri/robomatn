@@ -4,12 +4,12 @@ set -e
 
 mkdir -p prev_release
 
-OLD_FONT=prev_release/hinted/robomatn\[ital\,wdth\,wght\].ttf
-GENNED_FONT=fonts/hinted/robomatn\[ital\,wdth\,wght\].ttf
+OLD_FONT=prev_release/hinted/roboto\[ital\,wdth\,wght\].ttf
+GENNED_FONT=fonts/hinted/roboto\[ital\,wdth\,wght\].ttf
 
 DL_URL=$(curl https://api.github.com/repositories/86081751/releases/latest | jq -r .assets[0].browser_download_url)
 wget $DL_URL
-unzip robomatn_*.zip -d prev_release
+unzip roboto_*.zip -d prev_release
 
 
 # Diff old hinted variable font against current
