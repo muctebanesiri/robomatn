@@ -7,11 +7,11 @@
     <key>capHeight</key>
     <integer>1456</integer>
     <key>copyright</key>
-    <string>Copyright 2011 The Roboto Project Authors (https://github.com/googlefonts/roboto-classic)</string>
+    <string>Copyright 2011 The robomatn Project Authors (https://github.com/googlefonts/robomatn-classic)</string>
     <key>descender</key>
     <integer>-512</integer>
     <key>familyName</key>
-    <string>Roboto Condensed</string>
+    <string>robomatn Condensed</string>
     <key>guidelines</key>
     <array>
       <dict>
@@ -180,7 +180,7 @@
     <key>italicAngle</key>
     <integer>0</integer>
     <key>macintoshFONDName</key>
-    <string>RobotoCondensed Bold</string>
+    <string>robomatnCondensed Bold</string>
     <key>openTypeHeadCreated</key>
     <string>2008/09/12 12:29:34</string>
     <key>openTypeHeadFlags</key>
@@ -215,7 +215,7 @@
     <key>openTypeNameSampleText</key>
     <string></string>
     <key>openTypeNameUniqueID</key>
-    <string>Google:Roboto Condensed Bold:2016</string>
+    <string>Google:robomatn Condensed Bold:2016</string>
     <key>openTypeOS2CodePageRanges</key>
     <array>
       <integer>0</integer>
@@ -336,7 +336,7 @@
     <key>postscriptFamilyOtherBlues</key>
     <array/>
     <key>postscriptFontName</key>
-    <string>RobotoCondensed-Bold</string>
+    <string>robomatnCondensed-Bold</string>
     <key>postscriptForceBold</key>
     <false/>
     <key>postscriptIsFixedPitch</key>
@@ -361,13 +361,13 @@
     <key>postscriptUniqueID</key>
     <integer>-1</integer>
     <key>styleMapFamilyName</key>
-    <string>Roboto Condensed</string>
+    <string>robomatn Condensed</string>
     <key>styleMapStyleName</key>
     <string>bold</string>
     <key>styleName</key>
     <string>Bold</string>
     <key>trademark</key>
-    <string>Roboto is a trademark of Google.</string>
+    <string>robomatn is a trademark of Google.</string>
     <key>unitsPerEm</key>
     <integer>2048</integer>
     <key>versionMajor</key>

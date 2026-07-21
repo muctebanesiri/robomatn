@@ -1,10 +1,10 @@
-name: Roboto
+name: robomatn
 on: [pull_request]
 
 jobs:
 
   build:
-    name: Build Roboto
+    name: Build robomatn
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -27,15 +27,15 @@ jobs:
 
       - name: Test fonts
         run: |
-          fontbakery check-profile tests/test_general.py fonts/unhinted/Roboto[ital,wdth,wght].ttf
-          fontbakery check-profile tests/test_android.py fonts/android/Roboto[ital,wdth,wght].ttf
-          fontbakery check-profile tests/test_web.py fonts/web/Roboto[ital,wdth,wght].ttf
+          fontbakery check-profile tests/test_general.py fonts/unhinted/robomatn[ital,wdth,wght].ttf
+          fontbakery check-profile tests/test_android.py fonts/android/robomatn[ital,wdth,wght].ttf
+          fontbakery check-profile tests/test_web.py fonts/web/robomatn[ital,wdth,wght].ttf
           sh scripts/regression_test.sh
 
       - name: Upload
         uses: actions/upload-artifact@v4
         with:
-          name: roboto_files
+          name: robomatn_files
           path: |
             fonts/
             diffs/

@@ -1,5 +1,5 @@
 """
-Fix glyph anchors for Roboto VF.
+Fix glyph anchors for robomatn VF.
 
 Script uses lxml since ufoLib rearranges data.
 
