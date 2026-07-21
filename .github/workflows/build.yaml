@@ -1,5 +1,6 @@
 name: roboto
-on: [pull_request]
+on: [push]
+
 
 jobs:
 
